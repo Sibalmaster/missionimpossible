@@ -7,7 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <%= link_to "Home", root_path %>
+  <% if user_signed_in? %>
+    <%= link_to 'LogOut', destroy_user_session_path, method: :delete %>
+    <%= link_to 'MyPage', mypage_posts_path %>
+  <% else %>
+    <%= link_to 'LogIn', new_user_session_path %>
+    <%= link_to 'sign_up', new_user_registration_path %>
+  <% end %>
 <!-- devise gem-->
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
