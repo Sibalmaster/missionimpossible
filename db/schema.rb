@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180718090818) do
+=======
+ActiveRecord::Schema.define(version: 20180718083336) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+>>>>>>> 34dbbed901ab44bf894d29aac832188c2142151b
 
 # Could not dump table "posts" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
